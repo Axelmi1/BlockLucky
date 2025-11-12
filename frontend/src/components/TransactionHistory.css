@@ -1,9 +1,11 @@
 .transaction-history {
-  background: #ffffff;
+  background: #1a1f3a;
   border-radius: 12px;
   padding: 1.5rem;
   margin-top: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .transaction-history-header {
@@ -15,23 +17,24 @@
 
 .transaction-history-header h3 {
   margin: 0;
-  color: #333;
+  color: #ffffff;
   font-size: 1.25rem;
 }
 
 .refresh-button-small {
-  background: #4caf50;
+  background: #1a1f3a;
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.9rem;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .refresh-button-small:hover:not(:disabled) {
-  background: #45a049;
+  background: #2a2f4a;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .refresh-button-small:disabled {
@@ -40,23 +43,24 @@
 }
 
 .error-message-small {
-  background: #fee;
-  color: #c33;
+  background: rgba(244, 67, 54, 0.1);
+  color: #ff6b6b;
   padding: 0.75rem;
   border-radius: 6px;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+  border: 1px solid rgba(255, 107, 107, 0.3);
 }
 
 .loading-transactions {
   text-align: center;
   padding: 2rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .spinner-small {
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #4caf50;
+  border: 3px solid rgba(168, 85, 247, 0.2);
+  border-top: 3px solid #a855f7;
   border-radius: 50%;
   width: 30px;
   height: 30px;
@@ -73,13 +77,13 @@
 .no-transactions {
   text-align: center;
   padding: 2rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .no-transactions .hint {
   font-size: 0.9rem;
   margin-top: 0.5rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .transactions-list {
@@ -89,24 +93,27 @@
 }
 
 .transaction-item {
-  background: #f9f9f9;
+  background: #0f1422;
   border-radius: 8px;
   padding: 1rem;
-  border-left: 4px solid #ddd;
+  border-left: 4px solid rgba(255, 255, 255, 0.2);
   transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .transaction-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background: #1a1f3a;
 }
 
 .transaction-item.tx-sent {
-  border-left-color: #f44336;
+  border-left-color: #ff6b6b;
 }
 
 .transaction-item.tx-received {
-  border-left-color: #4caf50;
+  border-left-color: #4ade80;
 }
 
 .transaction-header {
@@ -125,27 +132,29 @@
 }
 
 .transaction-type-badge.tx-sent {
-  background: #ffebee;
-  color: #c62828;
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff6b6b;
+  border: 1px solid rgba(255, 107, 107, 0.3);
 }
 
 .transaction-type-badge.tx-received {
-  background: #e8f5e9;
-  color: #2e7d32;
+  background: rgba(74, 222, 128, 0.2);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
 }
 
 .transaction-value {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .transaction-value.tx-sent {
-  color: #f44336;
+  color: #ff6b6b;
 }
 
 .transaction-value.tx-received {
-  color: #4caf50;
+  color: #4ade80;
 }
 
 .transaction-details {
@@ -163,13 +172,13 @@
 }
 
 .detail-label {
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.85rem;
   font-weight: 500;
 }
 
 .detail-value {
-  color: #333;
+  color: #ffffff;
   font-family: monospace;
   font-size: 0.9rem;
 }
@@ -192,27 +201,29 @@
   flex: 1;
   min-width: 200px;
   font-size: 0.8rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   word-break: break-all;
-  background: #f5f5f5;
+  background: #0f1422;
   padding: 0.5rem;
   border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .copy-hash-button {
-  background: #2196f3;
+  background: #1a1f3a;
   color: white;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 0.5rem 1rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: background 0.2s;
+  transition: all 0.2s;
   white-space: nowrap;
 }
 
 .copy-hash-button:hover {
-  background: #1976d2;
+  background: #2a2f4a;
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .detail-value.status {
@@ -220,49 +231,52 @@
 }
 
 .detail-value.status.success {
-  color: #4caf50;
+  color: #4ade80;
 }
 
 .detail-value.status.failed {
-  color: #f44336;
+  color: #ff6b6b;
 }
 
 .explorer-info {
-  background: #f0f7ff;
-  border-left: 4px solid #2196f3;
+  background: rgba(168, 85, 247, 0.1);
+  border-left: 4px solid #a855f7;
   padding: 1rem;
   border-radius: 6px;
   margin-top: 1rem;
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .explorer-info h4 {
   margin: 0 0 0.5rem 0;
-  color: #1976d2;
+  color: #a855f7;
   font-size: 1rem;
 }
 
 .explorer-info .hint {
   margin: 0.5rem 0;
   font-size: 0.9rem;
-  color: #555;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .explorer-info code {
-  background: #e3f2fd;
+  background: #0f1422;
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.85rem;
+  color: #4ade80;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .transaction-history-footer {
   margin-top: 1.5rem;
   padding-top: 1rem;
-  border-top: 1px solid #e0e0e0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .transaction-history-footer .hint {
   font-size: 0.85rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   margin: 0;
 }

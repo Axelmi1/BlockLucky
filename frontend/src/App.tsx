@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useWeb3 } from "./hooks/useWeb3";
 import { LotteryInterface } from "./components/LotteryInterface";
+import { HomePage } from "./components/HomePage";
 import "./App.css";
 
 // Adresse du contrat déployé (à mettre à jour après déploiement)
@@ -11,6 +12,7 @@ function App() {
   const { account, isConnected, connect, disconnect } = useWeb3();
   const [contractAddress, setContractAddress] = useState<string>(CONTRACT_ADDRESS);
   const [inputAddress, setInputAddress] = useState<string>(CONTRACT_ADDRESS);
+  const [showHomePage, setShowHomePage] = useState<boolean>(true);
 
   const handleConnect = async () => {
     try {
@@ -28,6 +30,25 @@ function App() {
     }
   };
 
+  const handleParticipate = () => {
+    // Si pas d'adresse de contrat, demander à l'utilisateur de la configurer
+    if (!contractAddress) {
+      setShowHomePage(false);
+      // Si pas d'adresse dans l'input, utiliser l'adresse par défaut
+      if (!inputAddress) {
+        setInputAddress("0x5fbdb2315678afecb367f032d93f642f64180aa3");
+      }
+    } else {
+      setShowHomePage(false);
+    }
+  };
+
+  // Si on affiche la page d'accueil
+  if (showHomePage) {
+    return <HomePage onParticipate={handleParticipate} />;
+  }
+
+  // Sinon, afficher l'interface de loterie
   return (
     <div className="App">
       <header className="App-header">
@@ -138,9 +159,41 @@ function App() {
             <p className="hint" style={{ marginTop: "1rem", color: "#666", fontSize: "0.9rem" }}>
               📝 Dernière adresse déployée (si disponible) : <code style={{ background: "#f0f0f0", padding: "2px 6px", borderRadius: "4px" }}>0x5fbdb2315678afecb367f032d93f642f64180aa3</code>
             </p>
+            <button 
+              onClick={() => setShowHomePage(true)} 
+              style={{ 
+                marginTop: "1rem", 
+                padding: "0.75rem 1.5rem",
+                background: "#667eea",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "1rem"
+              }}
+            >
+              ← Retour à l'accueil
+            </button>
           </div>
         ) : (
-          <LotteryInterface contractAddress={contractAddress} isConnected={isConnected} />
+          <>
+            <button 
+              onClick={() => setShowHomePage(true)} 
+              style={{ 
+                marginBottom: "1rem", 
+                padding: "0.75rem 1.5rem",
+                background: "#667eea",
+                color: "white",
+                border: "none",
+                borderRadius: "8px",
+                cursor: "pointer",
+                fontSize: "1rem"
+              }}
+            >
+              ← Retour à l'accueil
+            </button>
+            <LotteryInterface contractAddress={contractAddress} isConnected={isConnected} />
+          </>
         )}
       </main>
 

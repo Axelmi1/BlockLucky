@@ -3,11 +3,13 @@
 }
 
 .ticket-card {
-  background: white;
+  background: #1a1f3a;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .ticket-header {
@@ -16,14 +18,14 @@
 
 .ticket-header h3 {
   margin: 0 0 0.5rem 0;
-  color: #333;
+  color: #ffffff;
   font-size: 1.5rem;
 }
 
 .ticket-price {
   font-size: 2rem;
   font-weight: bold;
-  color: #667eea;
+  color: #4ade80;
   margin-top: 0.5rem;
   display: flex;
   align-items: center;
@@ -32,7 +34,7 @@
 }
 
 .discount-badge {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 20px;
@@ -41,7 +43,7 @@
 }
 
 .ticket-description {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin-bottom: 2rem;
 }
@@ -50,15 +52,16 @@
 .quantity-selector {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: #0f1422;
   border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .quantity-selector label {
   display: block;
   margin-bottom: 1rem;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
 }
 
 .quantity-controls {
@@ -71,9 +74,9 @@
 .quantity-btn {
   width: 40px;
   height: 40px;
-  border: 2px solid #667eea;
-  background: white;
-  color: #667eea;
+  border: 2px solid #a855f7;
+  background: #1a1f3a;
+  color: #a855f7;
   border-radius: 8px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -85,7 +88,7 @@
 }
 
 .quantity-btn:hover:not(:disabled) {
-  background: #667eea;
+  background: #a855f7;
   color: white;
   transform: scale(1.1);
 }
@@ -101,28 +104,30 @@
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
-  border: 2px solid #667eea;
+  border: 2px solid #a855f7;
   border-radius: 8px;
-  color: #333;
+  color: #ffffff;
+  background: #0f1422;
 }
 
 .quantity-input:focus {
   outline: none;
-  border-color: #764ba2;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.2);
 }
 
 /* Packs VIP */
 .vip-packs {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  background: rgba(168, 85, 247, 0.1);
   border-radius: 12px;
+  border: 1px solid rgba(168, 85, 247, 0.2);
 }
 
 .vip-packs h4 {
   margin: 0 0 1rem 0;
-  color: #333;
+  color: #ffffff;
   font-size: 1.2rem;
 }
 
@@ -135,23 +140,24 @@
 
 .pack-card {
   padding: 1rem;
-  background: white;
-  border: 2px solid #e0e0e0;
+  background: #0f1422;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
+  color: #ffffff;
 }
 
 .pack-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
-  border-color: #667eea;
+  box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+  border-color: #a855f7;
 }
 
 .pack-card.selected {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-color: #667eea;
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+  border-color: #a855f7;
   color: white;
 }
 
@@ -164,7 +170,7 @@
 .pack-discount {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #f5576c;
+  color: #4ade80;
   margin-bottom: 0.25rem;
 }
 
@@ -174,7 +180,7 @@
 
 .pack-quantity {
   font-size: 0.85rem;
-  color: #666;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .pack-card.selected .pack-quantity {
@@ -185,16 +191,18 @@
 .price-details {
   margin: 2rem 0;
   padding: 1.5rem;
-  background: #f8f9fa;
+  background: #0f1422;
   border-radius: 12px;
   text-align: left;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 .price-row {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .price-row:last-child {
@@ -202,26 +210,26 @@
 }
 
 .price-row.original {
-  color: #999;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9rem;
   text-decoration: line-through;
 }
 
 .price-row.discount {
-  color: #f5576c;
+  color: #4ade80;
   font-weight: 600;
 }
 
 .price-row.total {
   margin-top: 0.5rem;
   padding-top: 1rem;
-  border-top: 2px solid #667eea;
+  border-top: 2px solid #a855f7;
   font-weight: bold;
   font-size: 1.1rem;
 }
 
 .total-price {
-  color: #667eea;
+  color: #4ade80;
   font-size: 1.3rem;
 }
 
@@ -231,8 +239,8 @@
   font-size: 1.1rem;
   font-weight: bold;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
+  background: #1a1f3a;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -243,8 +251,9 @@
 }
 
 .buy-button:hover:not(:disabled) {
+  background: #2a2f4a;
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 10px 20px rgba(168, 85, 247, 0.3);
 }
 
 .buy-button:active:not(:disabled) {
@@ -273,22 +282,23 @@
 
 .connect-hint {
   margin-top: 1rem;
-  color: #999;
+  color: rgba(255, 255, 255, 0.6);
   font-size: 0.9rem;
 }
 
 .buy-ticket.completed,
 .buy-ticket.inactive {
-  background: white;
+  background: #1a1f3a;
   border-radius: 20px;
   padding: 2rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .buy-ticket.completed p,
 .buy-ticket.inactive p {
-  color: #666;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.1rem;
   margin: 0;
 }
