@@ -152,13 +152,6 @@ function App() {
                 Utiliser cette adresse
               </button>
             </div>
-            <p className="hint">
-              💡 Pour obtenir l'adresse, déployez le contrat avec{" "}
-              <code>npm run deploy</code> dans le dossier racine
-            </p>
-            <p className="hint" style={{ marginTop: "1rem", color: "#666", fontSize: "0.9rem" }}>
-              📝 Dernière adresse déployée (si disponible) : <code style={{ background: "#f0f0f0", padding: "2px 6px", borderRadius: "4px" }}>0x5fbdb2315678afecb367f032d93f642f64180aa3</code>
-            </p>
             <button 
               onClick={() => setShowHomePage(true)} 
               style={{ 

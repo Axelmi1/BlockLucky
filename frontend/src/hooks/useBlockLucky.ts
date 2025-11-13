@@ -326,7 +326,7 @@ export const useBlockLucky = (contractAddress: string): UseBlockLuckyReturn => {
   const calculatePriceClient = useCallback((quantity: number): { totalPrice: string; discount: number; totalPriceWei: bigint } => {
     const basePrice = parseFloat(ticketPrice) * quantity;
     let discount = 0;
-    if (quantity >= 25) discount = 50;
+    if (quantity >= 25) discount = 20;
     else if (quantity >= 20) discount = 15;
     else if (quantity >= 15) discount = 10;
     const totalPrice = basePrice - (basePrice * discount / 100);
@@ -389,8 +389,9 @@ export const useBlockLucky = (contractAddress: string): UseBlockLuckyReturn => {
       try {
         // Utiliser staticCall pour éviter les erreurs dans les logs Hardhat
         const [totalPriceWei, discountPercent] = await contract.calculatePrice.staticCall(quantity);
+        const totalPriceEth = ethers.formatEther(totalPriceWei);
         return {
-          totalPrice: ethers.formatEther(totalPriceWei),
+          totalPrice: parseFloat(totalPriceEth).toFixed(4),
           discount: Number(discountPercent),
           totalPriceWei: totalPriceWei,
         };

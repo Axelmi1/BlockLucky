@@ -42,7 +42,7 @@ export const BuyTicket: React.FC<BuyTicketProps> = ({
           // Cela évite les erreurs si calculatePrice n'existe pas dans le contrat
           const basePrice = parseFloat(ticketPrice) * quantity;
           let discount = 0;
-          if (quantity >= 25) discount = 50;
+          if (quantity >= 25) discount = 20;
           else if (quantity >= 20) discount = 15;
           else if (quantity >= 15) discount = 10;
           const totalPrice = basePrice - (basePrice * discount / 100);
@@ -112,7 +112,7 @@ export const BuyTicket: React.FC<BuyTicketProps> = ({
   const vipPacks = [
     { quantity: 15, discount: 10, label: "Pack VIP 15" },
     { quantity: 20, discount: 15, label: "Pack VIP 20" },
-    { quantity: 25, discount: 50, label: "Pack VIP 25" },
+    { quantity: 25, discount: 20, label: "Pack VIP 25" },
   ];
 
   return (
@@ -121,7 +121,7 @@ export const BuyTicket: React.FC<BuyTicketProps> = ({
         <div className="ticket-header">
           <h3>Acheter des Tickets</h3>
           <div className="ticket-price">
-            {parseFloat(priceInfo.totalPrice).toFixed(4)} ETH
+            {priceInfo.totalPrice} ETH
             {priceInfo.discount > 0 && (
               <span className="discount-badge">-{priceInfo.discount}%</span>
             )}
@@ -211,7 +211,7 @@ export const BuyTicket: React.FC<BuyTicketProps> = ({
           )}
           <div className="price-row total">
             <span>Total à payer :</span>
-            <span className="total-price">{parseFloat(priceInfo.totalPrice).toFixed(4)} ETH</span>
+            <span className="total-price">{priceInfo.totalPrice} ETH</span>
           </div>
         </div>
 

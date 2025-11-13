@@ -19,7 +19,7 @@ contract BlockLucky {
     uint256 public constant VIP_PACK_25 = 25;
     uint256 public constant DISCOUNT_10_PERCENT = 10;
     uint256 public constant DISCOUNT_15_PERCENT = 15;
-    uint256 public constant DISCOUNT_50_PERCENT = 50;
+    uint256 public constant DISCOUNT_20_PERCENT = 20;
     uint256 public constant MAX_TICKETS_PER_TRANSACTION = 25;
     
     // 5. TRANSPARENCE : Tous les événements sont publics et vérifiables sur la blockchain
@@ -75,8 +75,8 @@ contract BlockLucky {
         uint256 basePrice = TICKET_PRICE * quantity;
         
         if (quantity >= VIP_PACK_25) {
-            totalPrice = basePrice - (basePrice * DISCOUNT_50_PERCENT / 100);
-            discount = DISCOUNT_50_PERCENT;
+            totalPrice = basePrice - (basePrice * DISCOUNT_20_PERCENT / 100);
+            discount = DISCOUNT_20_PERCENT;
         } else if (quantity >= VIP_PACK_20) {
             totalPrice = basePrice - (basePrice * DISCOUNT_15_PERCENT / 100);
             discount = DISCOUNT_15_PERCENT;
